@@ -22,8 +22,20 @@ function App() {
         <h2 style={style}>Name: {person.name}</h2>
         <h2 style={{backgroundColor: 'cyan', color: 'tomato'}}>Occupation: {person.job}</h2>
         <p>My first React Paragraph</p>
+        <Person></Person>
+        <Person></Person>
+        <Person></Person>
       </header>
     </div>
+  );
+}
+
+function Person(){
+  return (
+  <div style={{border: "2px solid yellow", margin: '10px'}}>
+    <h1>Name: Sakib Khan</h1>
+    <h2>I love him a lot...</h2>
+  </div>
   );
 }
 
