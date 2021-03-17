@@ -2,12 +2,14 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
-  const nayoks = ['Anwar', 'Jafar', 'Alamgir', 'Salman Shah'];
+  const nayoks = ['Anwar', 'Jafar', 'Alamgir', 'Salman Shah', 'Shahrukh Khan'];
   const products = [
     {name: 'Photoshop', price: '19.99$'},
     {name: 'Illustrator', price: '19.99$'},
     {name: 'PDF Reader', price: '19.99$'},
-  ]
+    {name: 'Premiere El', price: '19.99$'},
+  ];
+
   var person = {
     name: "Dr. Mahfuz",
     job: 'Singer'
@@ -28,13 +30,20 @@ function App() {
         <h2 style={{backgroundColor: 'cyan', color: 'tomato'}}>Occupation: {person.job}</h2>
         <p>My first React Paragraph</p>
         {/* <Product name={products[0].name} price={products[0].price}></Product> */}
-        <Product product={products[0]}></Product>
-        <Product product={products[1]}></Product>
-        <Product product={products[2]}></Product>
-        <Person name={nayoks[0]} nayika="Deepika"></Person>
-        <Person name={nayoks[2]} nayika="Shabana"></Person>
-        <Person name="Bapparaj" nayika="Cheka"></Person>
-        <Person name="Elias K" nayika="Bobita"></Person>
+        <ul>
+          {
+            nayoks.map(nayok => <li>{nayok}</li>)
+          }
+          {
+            products.map(product => <li>{product.name}</li>)
+          }
+        </ul>
+        {
+          products.map(pd =><Product product={pd}></Product>)
+        }
+        {
+          nayoks.map(nayok => <Person name={nayok}></Person>)
+        }
       </header>
     </div>
   );
