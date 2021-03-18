@@ -51,11 +51,23 @@ function App() {
   );
 }
 
-function Counter(props) {
+function Counter() {
   const [count, setCount] = useState(0);
+  const handleIncrease = () => {
+    const newCount = count + 1;
+    setCount(newCount);
+  };
+  const handleDecrease = () => {
+    if(count > 0){
+      const newCount = count - 1;
+      setCount(newCount);
+    }
+  };
   return(
     <div>
       <h1>Count: {count}</h1>
+      <button onClick={handleIncrease}>Increase</button>
+      <button onClick={handleDecrease}>Decrease</button>
     </div>
   )
 }
